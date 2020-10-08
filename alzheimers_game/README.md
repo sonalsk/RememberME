@@ -1,4 +1,4 @@
-# flutter_app
+# alzheimers_game
 
 A new Flutter application.
 
