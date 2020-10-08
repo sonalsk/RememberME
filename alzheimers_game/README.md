@@ -1,4 +1,4 @@
-# alzheimer_test
+# alzheimers_game
 
 A new Flutter application.
 
