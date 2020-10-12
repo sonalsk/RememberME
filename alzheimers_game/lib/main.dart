@@ -1,4 +1,3 @@
-import 'package:alzheimers_game/threeProducts.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: threeProducts(),
+      home: MyHomePage(),
     );
   }
 }
