@@ -1,4 +1,4 @@
-import 'package:alzheimers_game/screens/home/threeObjects.dart';
+//import 'package:alzheimers_game/games/threeObjects.dart';
 import 'package:flutter/material.dart';
 import 'package:alzheimers_game/screens/home/home.dart';
 
@@ -16,7 +16,7 @@ class RememberME extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
-      home: threeProducts()
+      home: Home(),
     );
   }
 }

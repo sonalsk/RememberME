@@ -103,8 +103,8 @@ class _HomeState extends State<Home> {
                 child: Image(
                   image: AssetImage(imgPath),
                   fit: BoxFit.cover,
-                  height: 75.0,
-                  width: 75.0,
+                  height: 80.0,
+                  width: 80.0,
                 )
               ),
               SizedBox(width: 10.0),
