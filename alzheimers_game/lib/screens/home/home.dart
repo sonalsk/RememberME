@@ -1,6 +1,7 @@
 import 'package:alzheimers_game/games/Clock_game.dart';
 import 'package:alzheimers_game/games/memory_game/memory_game.dart';
 import 'package:alzheimers_game/games/threeObjects.dart';
+import 'package:alzheimers_game/screens/ChatBot/dialog_flow.dart';
 import 'package:alzheimers_game/profile/profile_page.dart';
 import 'package:alzheimers_game/screens/home/gamescreen.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +40,14 @@ class _HomeState extends State<Home> {
                           IconButton(
                             icon: Icon(Icons.chat),
                             color: white,
-                            onPressed: () {},
+                            onPressed: (){
+
+                              Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) {
+                                return FlutterFactsChatBot();
+
+                              })
+                              );
+                            },
                           ),
                           IconButton(
                             icon: Icon(Icons.account_circle),
