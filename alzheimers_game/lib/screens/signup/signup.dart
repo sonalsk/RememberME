@@ -77,7 +77,7 @@ class _SignUpState extends State<SignUp> {
                                 ))))),
                   ])),
               Padding(
-                  padding: EdgeInsets.only(left: 30.0, right: 30.0, top : 50.0),
+                  padding: EdgeInsets.only(left: 30.0, right: 30.0, top : 20.0),
                   child: Column(children: [
                     FadeAnimation(
                       1.8,
@@ -103,6 +103,21 @@ class _SignUpState extends State<SignUp> {
                                 decoration: InputDecoration(
                                     border: InputBorder.none,
                                     hintText: "Username",
+                                    hintStyle: GoogleFonts.signika(
+                                      fontSize: 18.0,
+                                      color: grey[400],
+                                    )),
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(8.0),
+                              decoration: BoxDecoration(
+                                  border: Border(
+                                      bottom: BorderSide(color: grey[100]))),
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintText: "Age",
                                     hintStyle: GoogleFonts.signika(
                                       fontSize: 18.0,
                                       color: grey[400],

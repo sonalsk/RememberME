@@ -1,5 +1,6 @@
 import 'package:alzheimers_game/games/Clock_game.dart';
 import 'package:alzheimers_game/games/threeObjects.dart';
+import 'package:alzheimers_game/profile/profile_page.dart';
 import 'package:alzheimers_game/screens/home/gamescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -42,7 +43,11 @@ class _HomeState extends State<Home> {
                           IconButton(
                             icon: Icon(Icons.account_circle),
                             color: white,
-                            onPressed: () {},
+                            onPressed: () {
+                               Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) => ProfilePage()));
+                            },
                           )
                         ],
                       ))
@@ -85,6 +90,7 @@ class _HomeState extends State<Home> {
               ],
               enlargeCenterPage: true,
               viewportFraction: 0.8,
+              enableInfiniteScroll: false,
             )),
       ]),
       // floatingActionButton: Padding(
