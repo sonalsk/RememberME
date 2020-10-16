@@ -76,7 +76,7 @@ class _LogInState extends State<LogIn> {
                                 ))))),
                   ])),
               Padding(
-                  padding: EdgeInsets.all(30.0),
+                  padding: EdgeInsets.only(left: 30.0, right: 30.0, top : 50.0),
                   child: Column(children: [
                     FadeAnimation(
                       1.8,
@@ -124,15 +124,15 @@ class _LogInState extends State<LogIn> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 50),
+                    SizedBox(height: 70),
                     FadeAnimation(
                       2,
                       InkWell(
-                        onTap: () {
-                          Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) => Home()));
+                        onTap: (){
+                          Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Home()));
                         },
-                        child: Container(
+                                              child: Container(
                           height: 50,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -150,11 +150,13 @@ class _LogInState extends State<LogIn> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 70.0),
+                    SizedBox(height: 30.0),
                     FadeAnimation(
                         1.5,
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            
+                          },
                           child: Text("Don't have an account? Register",
                               style: GoogleFonts.signika(
                                 fontSize: 16.0,
