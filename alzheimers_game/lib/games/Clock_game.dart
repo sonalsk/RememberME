@@ -238,12 +238,12 @@ class ScorePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: primaryTeal,
       body: Container(
-          // decoration: BoxDecoration(
-          //     image: DecorationImage(
-          //         image: AssetImage("assets/images/ClockBG.png"),
-          //         fit: BoxFit.fill
-          //     )
-          // ),
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/images/ClockBG.png"),
+                  fit: BoxFit.cover
+              )
+          ),
           child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -261,10 +261,15 @@ class ScorePage extends StatelessWidget {
                         bottomRight: const Radius.circular(10.0),
                       ),
                       color: Colors.white),
-                  height: 200,
-                  width: 200,
-                  child: Center(
-                    child: Text("Score :" + FINAL_SCORE.toString()),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Center(
+                      child: Text("🎉 Your Score : " + FINAL_SCORE.toString(),
+                      style: GoogleFonts.signika(
+                        fontSize: 30,
+
+                      )),
+                    ),
                   ))
             ],
           )
@@ -284,7 +289,7 @@ class _ClockGameState extends State<ClockGame> {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/ClockBG.png"),
-            fit: BoxFit.fill
+            fit: BoxFit.cover
           )
         ),
         child: Padding(

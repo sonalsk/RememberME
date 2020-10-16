@@ -99,7 +99,8 @@ class _SplashScreenState extends State<SplashScreen>
                         height: 400.0,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                          image: AssetImage('assets/backgrounds/splashcolor.png'),
+                          image:
+                              AssetImage('assets/backgrounds/splashcolor.png'),
                           fit: BoxFit.cover,
                         )),
                       )),
@@ -114,7 +115,8 @@ class _SplashScreenState extends State<SplashScreen>
                         height: 400.0,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                          image: AssetImage('assets/backgrounds/splashcolor.png'),
+                          image:
+                              AssetImage('assets/backgrounds/splashcolor.png'),
                           fit: BoxFit.cover,
                         )),
                       ),
@@ -129,7 +131,8 @@ class _SplashScreenState extends State<SplashScreen>
                         height: 400.0,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                          image: AssetImage('assets/backgrounds/splashcolor.png'),
+                          image:
+                              AssetImage('assets/backgrounds/splashcolor.png'),
                           fit: BoxFit.cover,
                         )),
                       ),
