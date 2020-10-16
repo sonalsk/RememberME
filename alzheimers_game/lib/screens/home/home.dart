@@ -1,4 +1,5 @@
 import 'package:alzheimers_game/games/Clock_game.dart';
+import 'package:alzheimers_game/games/memory_game/memory_game.dart';
 import 'package:alzheimers_game/games/threeObjects.dart';
 import 'package:alzheimers_game/profile/profile_page.dart';
 import 'package:alzheimers_game/screens/home/gamescreen.dart';
@@ -79,14 +80,14 @@ class _HomeState extends State<Home> {
               height: screenHeight * 0.55,
               scrollDirection: Axis.horizontal,
               items: [
-                _buildGameCard('assets/tests/memory-game.png', 'Memory Game',
-                    'Testing Memory Power', ClockGame()),
-                _buildGameCard('assets/tests/gtc.png', 'Match Color',
-                    'Testing Memory Power', ThreeProducts()),
-                _buildGameCard('assets/tests/ttt.png', 'Tic Tac Toe',
-                    'Testing Memory Power', ClockGame()),
-                _buildGameCard('assets/tests/snake-game.png', 'Snake Game',
-                    'Testing Memory Power', ThreeProducts())
+                _buildGameCard('assets/tests/memory.png', 'Memory Game',
+                    'Testing Memory Power', MemoryGame()),
+                _buildGameCard('assets/tests/clock.png', 'Clock Game',
+                    'Testing Concentration Power', ClockGame()),
+                _buildGameCard('assets/tests/color.png', 'Agile Game',
+                    'Testing Response Time', null),
+                _buildGameCard('assets/tests/objects.png', 'Indentify Game',
+                    'Testing Response Time', ThreeProducts())
               ],
               enlargeCenterPage: true,
               viewportFraction: 0.8,
