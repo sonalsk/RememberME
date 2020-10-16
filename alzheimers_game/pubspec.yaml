@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_dialogflow: ^0.1.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -54,6 +55,7 @@ flutter:
     - assets/backgrounds/
     - assets/images/
     - assets/tests/
+    - assets/alzheimers-disease-292712-16f4ba5225ec.json
 
   #   - images/a_dot_ham.jpeg
 
