@@ -44,7 +44,7 @@ class _GameScreenState extends State<GameScreen> {
         body: ListView(children: [
           Stack(children: [
             Container(
-              height: screenHeight - 82.0,
+              height: screenHeight,
               width: screenWidth,
               color: Colors.transparent,
             ),
@@ -57,7 +57,7 @@ class _GameScreenState extends State<GameScreen> {
                       topRight: Radius.circular(45.0)),
                   color: white,
                 ),
-                height: screenHeight - 100.0,
+                height: screenHeight,
                 width: screenWidth,
               ),
             ),
