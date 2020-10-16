@@ -1,3 +1,4 @@
+import 'package:alzheimers_game/games/Clock_game.dart';
 import 'package:alzheimers_game/games/threeObjects.dart';
 import 'package:alzheimers_game/screens/home/gamescreen.dart';
 import 'package:flutter/material.dart';
@@ -65,22 +66,22 @@ class _HomeState extends State<Home> {
             decoration: BoxDecoration(
               color: white,
               borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(75.0),
-                  //topRight: Radius.circular(75.0)
-                  ),
+                topLeft: Radius.circular(75.0),
+                //topRight: Radius.circular(75.0)
+              ),
             ),
             child: CarouselSlider(
               height: screenHeight * 0.55,
               scrollDirection: Axis.horizontal,
               items: [
-                _buildGameCard('assets/memory-game.png', 'Memory Game',
-                    'Testing Memory Power'),
-                _buildGameCard(
-                    'assets/gtc.png', 'Match Color', 'Testing Memory Power'),
-                _buildGameCard(
-                    'assets/ttt.png', 'Tic Tac Toe', 'Testing Memory Power'),
-                _buildGameCard('assets/snake-game.png', 'Snake Game',
-                    'Testing Memory Power')
+                _buildGameCard('assets/tests/memory-game.png', 'Memory Game',
+                    'Testing Memory Power', ClockGame()),
+                _buildGameCard('assets/tests/gtc.png', 'Match Color',
+                    'Testing Memory Power', ThreeProducts()),
+                _buildGameCard('assets/tests/ttt.png', 'Tic Tac Toe',
+                    'Testing Memory Power', ClockGame()),
+                _buildGameCard('assets/tests/snake-game.png', 'Snake Game',
+                    'Testing Memory Power', ThreeProducts())
               ],
               enlargeCenterPage: true,
               viewportFraction: 0.8,
@@ -93,11 +94,11 @@ class _HomeState extends State<Home> {
       //     child: Icon(Icons.chat, color: white),
       //     onPressed: () {},
       //   ),
-      
     );
   }
 
-  Widget _buildGameCard(String imgPath, String gameName, String gameCategory) {
+  Widget _buildGameCard(
+      String imgPath, String gameName, String gameCategory, Widget test) {
     return Padding(
       padding:
           EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0, bottom: 40.0),
@@ -107,7 +108,8 @@ class _HomeState extends State<Home> {
                 builder: (context) => GameScreen(
                     heroTag: imgPath,
                     gameName: gameName,
-                    gameCategory: gameCategory)));
+                    gameCategory: gameCategory,
+                    test: test)));
           },
           child: Card(
             color: primaryTeal,
@@ -161,8 +163,7 @@ class _HomeState extends State<Home> {
                                   onPressed: () {
                                     Navigator.of(context).push(
                                         MaterialPageRoute(
-                                            builder: (context) =>
-                                                threeProducts()));
+                                            builder: (context) => test));
                                   },
                                   color: white,
                                   splashColor: primaryTeal.withOpacity(0.7),

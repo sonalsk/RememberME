@@ -1,8 +1,7 @@
-//import 'package:alzheimers_game/games/threeObjects.dart';
-import 'package:alzheimers_game/screens/login/login.dart';
+
 import 'package:alzheimers_game/screens/splashscreen.dart';
 import 'package:flutter/material.dart';
-import 'package:alzheimers_game/screens/home/home.dart';
+
 
 void main() {
   runApp(RememberME());

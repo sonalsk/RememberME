@@ -1,5 +1,6 @@
 import 'package:alzheimers_game/animations/fadeanimation.dart';
 import 'package:alzheimers_game/screens/home/home.dart';
+import 'package:alzheimers_game/screens/signup/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:alzheimers_game/shared/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,7 +23,7 @@ class _LogInState extends State<LogIn> {
                   height: 400,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                    image: AssetImage('assets/background.png'),
+                    image: AssetImage('assets/backgrounds/background.png'),
                     fit: BoxFit.fill,
                   )),
                   child: Stack(children: [
@@ -36,7 +37,7 @@ class _LogInState extends State<LogIn> {
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
                                         image: AssetImage(
-                                            'assets/light-1.png')))))),
+                                            'assets/backgrounds/light-1.png')))))),
                     Positioned(
                         left: 140,
                         width: 80,
@@ -47,7 +48,7 @@ class _LogInState extends State<LogIn> {
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
                                         image: AssetImage(
-                                            'assets/light-2.png')))))),
+                                            'assets/backgrounds/light-2.png')))))),
                     Positioned(
                         right: 40,
                         top: 40,
@@ -59,7 +60,7 @@ class _LogInState extends State<LogIn> {
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
                                         image:
-                                            AssetImage('assets/clock.png')))))),
+                                            AssetImage('assets/backgrounds/clock.png')))))),
                     Positioned(
                         child: FadeAnimation(
                             1.6,
@@ -76,7 +77,7 @@ class _LogInState extends State<LogIn> {
                                 ))))),
                   ])),
               Padding(
-                  padding: EdgeInsets.only(left: 30.0, right: 30.0, top : 50.0),
+                  padding: EdgeInsets.only(left: 30.0, right: 30.0, top: 50.0),
                   child: Column(children: [
                     FadeAnimation(
                       1.8,
@@ -128,11 +129,11 @@ class _LogInState extends State<LogIn> {
                     FadeAnimation(
                       2,
                       InkWell(
-                        onTap: (){
-                          Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => Home()));
+                        onTap: () {
+                          Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => Home()));
                         },
-                                              child: Container(
+                        child: Container(
                           height: 50,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -155,7 +156,9 @@ class _LogInState extends State<LogIn> {
                         1.5,
                         InkWell(
                           onTap: () {
-                            
+                            Navigator.pop(context);
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => SignUp()));
                           },
                           child: Text("Don't have an account? Register",
                               style: GoogleFonts.signika(

@@ -1,4 +1,3 @@
-import 'package:alzheimers_game/games/threeObjects.dart';
 import 'package:flutter/material.dart';
 import 'package:alzheimers_game/shared/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,8 +6,9 @@ class GameScreen extends StatefulWidget {
   final heroTag;
   final gameName;
   final gameCategory;
+  final test;
 
-  GameScreen({this.heroTag, this.gameName, this.gameCategory});
+  GameScreen({this.heroTag, this.gameName, this.gameCategory, this.test});
 
   @override
   _GameScreenState createState() => _GameScreenState();
@@ -112,42 +112,41 @@ class _GameScreenState extends State<GameScreen> {
                                 ),
                               ],
                             ))),
-                    
                   ],
                 )),
-                Positioned(
-                  top: screenHeight - 250,
-                  right: 25.0,
-                  left: 25.0,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      FractionallySizedBox(
-                        widthFactor: 0.9,
-                        child: RaisedButton(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0)),
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => threeProducts()));
-                            },
-                            color: primaryBlue,
-                            splashColor: primaryTeal.withOpacity(0.7),
-                            elevation: 2.0,
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Text("Play",
-                                  style: GoogleFonts.signika(
-                                    fontSize: 26.0,
-                                    fontWeight: FontWeight.bold,
-                                    color: white,
-                                  )),
-                            )),
-                      ),
-                    ],
+            Positioned(
+              top: screenHeight - 250,
+              right: 25.0,
+              left: 25.0,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  FractionallySizedBox(
+                    widthFactor: 0.9,
+                    child: RaisedButton(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => widget.test));
+                        },
+                        color: primaryBlue,
+                        splashColor: primaryTeal.withOpacity(0.7),
+                        elevation: 2.0,
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text("Play",
+                              style: GoogleFonts.signika(
+                                fontSize: 26.0,
+                                fontWeight: FontWeight.bold,
+                                color: white,
+                              )),
+                        )),
                   ),
-                )
+                ],
+              ),
+            )
           ])
         ]));
   }

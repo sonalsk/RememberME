@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class threeProducts extends StatelessWidget {
+class ThreeProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
@@ -115,11 +115,11 @@ class _OppositeState extends State<Opposite> {
   int score = 0;
 
   var inputs = [
-    {"Image1" : 'assets/pic.png', "Image2" : 'assets/pic.png', "Image3" : 'assets/tgate.png'},
-    {"Image1" : 'assets/pic.png', "Image2" : 'assets/pic.png', "Image3" : 'assets/pic.png'},
-    {"Image1" : 'assets/pic.png', "Image2" : 'assets/tgate.png', "Image3" : 'assets/pic.png'},
-    {"Image1" : 'assets/pic.png', "Image2" : 'assets/pic.png', "Image3" : 'assets/pic.png'},
-    {"Image1" : 'assets/tgate.png', "Image2" : 'assets/pic.png', "Image3" : 'assets/pic.png'},
+    {"Image1" : 'assets/images/pic.png', "Image2" : 'assets/images/pic.png', "Image3" : 'assets/images/tgate.png'},
+    {"Image1" : 'assets/images/pic.png', "Image2" : 'assets/images/pic.png', "Image3" : 'assets/images/pic.png'},
+    {"Image1" : 'assets/images/pic.png', "Image2" : 'assets/images/tgate.png', "Image3" : 'assets/images/pic.png'},
+    {"Image1" : 'assets/images/pic.png', "Image2" : 'assets/images/pic.png', "Image3" : 'assets/images/pic.png'},
+    {"Image1" : 'assets/images/tgate.png', "Image2" : 'assets/images/pic.png', "Image3" : 'assets/images/pic.png'},
   ];
 
   buildList() async{
