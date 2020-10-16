@@ -1,6 +1,7 @@
 import 'package:alzheimers_game/shared/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'facts_message.dart';
 
 class FlutterFactsChatBot extends StatefulWidget {
@@ -79,7 +80,7 @@ class _FlutterFactsChatBotState extends State<FlutterFactsChatBot> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Your - Pal", style: TextStyle(color: white),),
+        title: Text("Your - Pal", style: GoogleFonts.acme(color: white, fontSize:30),),
         backgroundColor: primaryTeal,
         elevation: 0,
       ),
