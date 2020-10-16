@@ -1,3 +1,4 @@
+import 'package:alzheimers_game/shared/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
 import 'facts_message.dart';
@@ -27,13 +28,13 @@ class _FlutterFactsChatBotState extends State<FlutterFactsChatBot> {
               child: TextField(
                 controller: _textController,
                 onSubmitted: _submitQuery,
-                decoration: InputDecoration.collapsed(hintText: "Send a message"),
+                decoration: InputDecoration.collapsed(hintText: "Ask your Question"),
               ),
             ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 4.0),
               child: IconButton(
-                  icon: Icon(Icons.send, color: Colors.green[400],),
+                  icon: Icon(Icons.send, color: primaryTeal,),
                   onPressed: () => _submitQuery(_textController.text)),
             ),
           ],
@@ -78,8 +79,8 @@ class _FlutterFactsChatBotState extends State<FlutterFactsChatBot> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Flutter Facts", style: TextStyle(color: Colors.green[400]),),
-        backgroundColor: Colors.white,
+        title: Text("Your - Pal", style: TextStyle(color: white),),
+        backgroundColor: primaryTeal,
         elevation: 0,
       ),
       body: Column(children: <Widget>[

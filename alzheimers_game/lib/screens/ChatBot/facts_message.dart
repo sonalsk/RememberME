@@ -1,3 +1,4 @@
+import 'package:alzheimers_game/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 class Facts extends StatelessWidget {
@@ -46,7 +47,7 @@ class Facts extends StatelessWidget {
           children: <Widget>[
 //            Text(this.name, style: Theme.of(context).textTheme.subhead),
             Card(
-                color: Colors.green[400],
+                color: primaryTeal,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20))
                 ),
@@ -60,7 +61,7 @@ class Facts extends StatelessWidget {
       ),
       Container(
         margin: const EdgeInsets.only(left: 10.0),
-        child: CircleAvatar(child: new Text(this.name[0]),backgroundColor: Colors.grey[200], radius: 12,),
+        child: CircleAvatar(child: new Text(this.name[0]),backgroundColor: Colors.grey[200], radius: 16,),
       ),
     ];
   }
