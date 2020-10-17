@@ -38,29 +38,33 @@ class _ThankYouState extends State<ThankYou> {
                           fontWeight: FontWeight.w500,
                           color: primaryTeal,
                         )),
-                    RaisedButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
+                    SizedBox(height: 70.0),
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: RaisedButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                        elevation: 4.0,
+                        onPressed: () {
+                          Navigator.pop(context);
+                          Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => Home()));
+                        },
+                        child: Padding(
+                            padding: const EdgeInsets.all(15.0),
+                            child: Container(
+                              alignment: Alignment.center,
+                              height: 50.0,
+                              width: width,
+                              child: Text("End Test",
+                                  style: GoogleFonts.signika(
+                                      color: primaryTeal,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0)),
+                            )),
+                        color: white.withOpacity(.8),
                       ),
-                      elevation: 4.0,
-                      onPressed: () {
-                        Navigator.pop(context);
-                        Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) => Home()));
-                      },
-                      child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Container(
-                            alignment: Alignment.center,
-                            height: 50.0,
-                            width: width,
-                            child: Text("End Test",
-                                style: GoogleFonts.signika(
-                                    color: Colors.teal,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 22.0)),
-                          )),
-                      color: white.withOpacity(.8),
                     ),
                   ],
                 ))));
