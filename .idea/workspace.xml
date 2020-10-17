@@ -6,13 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="1d60735e-e6e1-4b5b-8720-ed8afdf5d774" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/Alzheimers-Disease-App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Alzheimers-Disease-App.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alzheimers_game/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/alzheimers_game/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alzheimers_game/lib/profile/profile_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/alzheimers_game/lib/profile/profile_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alzheimers_game/lib/screens/login/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/alzheimers_game/lib/screens/login/login.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[94RAY0S2SF]" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -26,6 +31,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
@@ -86,6 +92,15 @@
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2" />
     </configuration>
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/alzheimers_game/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Flutter.main.dart" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -101,14 +116,31 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2338" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602919986745">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="418" y="166" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602940040462">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="2338" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602919986744" />
+    <state x="418" y="166" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1602940040462" />
+    <state x="2338" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602939998477" />
     <state x="2663" y="274" width="424" height="491" key="FileChooserDialogImpl" timestamp="1602844282032">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2663" y="274" width="424" height="491" key="FileChooserDialogImpl/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602844282032" />
+    <state width="1874" height="269" key="GridCell.Tab.0.bottom" timestamp="1602941222065">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1874" height="269" key="GridCell.Tab.0.bottom/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1602941222065" />
+    <state width="1874" height="269" key="GridCell.Tab.0.center" timestamp="1602941222065">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1874" height="269" key="GridCell.Tab.0.center/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1602941222065" />
+    <state width="1874" height="269" key="GridCell.Tab.0.left" timestamp="1602941222065">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1874" height="269" key="GridCell.Tab.0.left/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1602941222065" />
+    <state width="1874" height="269" key="GridCell.Tab.0.right" timestamp="1602941222065">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1874" height="269" key="GridCell.Tab.0.right/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1602941222065" />
     <state x="2369" y="151" width="1022" height="737" key="SettingsEditor" timestamp="1602919966086">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

@@ -113,6 +113,40 @@ class _LogInState extends State<LogIn> {
                                     border: Border(
                                         bottom: BorderSide(color: grey[100]))),
                                 child: TextFormField(
+                                  keyboardType: TextInputType.text,
+                                  decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      hintText: "Name",
+                                      hintStyle: GoogleFonts.signika(
+                                        fontSize: 18.0,
+                                        color: grey[400],
+                                      )),
+                                ),
+                              ),
+
+                              Container(
+                                padding: EdgeInsets.all(8.0),
+                                decoration: BoxDecoration(
+                                    border: Border(
+                                        bottom: BorderSide(color: grey[100]))),
+                                child: TextFormField(
+                                  keyboardType: TextInputType.number,
+                                  decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      hintText: "Age",
+                                      hintStyle: GoogleFonts.signika(
+                                        fontSize: 18.0,
+                                        color: grey[400],
+                                      )),
+                                ),
+                              ),
+
+                              Container(
+                                padding: EdgeInsets.all(8.0),
+                                decoration: BoxDecoration(
+                                    border: Border(
+                                        bottom: BorderSide(color: grey[100]))),
+                                child: TextFormField(
                                     keyboardType: TextInputType.phone,
                                     decoration: InputDecoration(
                                         border: InputBorder.none,

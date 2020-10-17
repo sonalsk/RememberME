@@ -1,3 +1,4 @@
+import 'package:alzheimers_game/screens/login/login.dart';
 import 'package:alzheimers_game/screens/services/authservice.dart';
 import 'package:alzheimers_game/shared/constants.dart';
 import 'package:flutter/material.dart';
@@ -71,7 +72,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                       child: Text('Signout'),
                                       onPressed: () {
                                         AuthService().signOut();
-                                        Navigator.pop(context);
+                                        Navigator.of(context).pop();
+                                        Navigator.of(context).push(new MaterialPageRoute(
+                                            builder: (BuildContext context) {
+                                              return LogIn();
+                                            }));
                                       },
                                     ),
                                 SizedBox(height: 10),
