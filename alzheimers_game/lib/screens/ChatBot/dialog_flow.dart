@@ -1,99 +1,223 @@
 import 'package:alzheimers_game/shared/constants.dart';
+import 'package:bubble/bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'facts_message.dart';
 
 class FlutterFactsChatBot extends StatefulWidget {
   FlutterFactsChatBot({Key key, this.title}) : super(key: key);
 
+// This widget is the home page of your application. It is stateful, meaning
+// that it has a State object (defined below) that contains fields that affect
+// how it looks.
+
+// This class is the configuration for the state. It holds the values (in this
+// case the title) provided by the parent (in this case the App widget) and
+// used by the build method of the State. Fields in a Widget subclass are
+// always marked "final".
+
   final String title;
 
   @override
-  _FlutterFactsChatBotState createState() => new _FlutterFactsChatBotState();
+  _FlutterFactsChatBotState createState() => _FlutterFactsChatBotState();
 }
 
 class _FlutterFactsChatBotState extends State<FlutterFactsChatBot> {
-  final List<Facts> messageList = <Facts>[];
-  final TextEditingController _textController = new TextEditingController();
+  void response(query) async {
+    AuthGoogle authGoogle = await AuthGoogle(
+        fileJson: "assets/service.json")
+        .build();
+    Dialogflow dialogflow =
+    Dialogflow(authGoogle: authGoogle, language: Language.english);
+    AIResponse aiResponse = await dialogflow.detectIntent(query);
+    setState(() {
+      messsages.insert(0, {
+        "data": 0,
+        "message": aiResponse.getListMessage()[0]["text"]["text"][0].toString()
+      });
+    });
 
-  Widget _queryInputWidget(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.all(10),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(30))),
-      child: Padding(
-        padding: const EdgeInsets.only(left:8.0, right: 8),
-        child: Row(
+
+
+  }
+
+  final messageInsert = TextEditingController();
+  List<Map> messsages = List();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Chat bot",
+        ),
+        backgroundColor: primaryTeal,
+      ),
+      body: Container(
+        child: Column(
           children: <Widget>[
+            Container(
+              padding: EdgeInsets.only(top: 15, bottom: 10),
+              child: Text("Today, ${DateFormat("Hm").format(DateTime.now())}", style: TextStyle(
+                  fontSize: 20
+              ),),
+            ),
             Flexible(
-              child: TextField(
-                controller: _textController,
-                onSubmitted: _submitQuery,
-                decoration: InputDecoration.collapsed(hintText: "Ask your Question"),
-              ),
+                child: ListView.builder(
+                    reverse: true,
+                    itemCount: messsages.length,
+                    itemBuilder: (context, index) => chat(
+                        messsages[index]["message"].toString(),
+                        messsages[index]["data"]))),
+            SizedBox(
+              height: 20,
+            ),
+
+            Divider(
+              height: 5.0,
+              color: primaryTeal,
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 4.0),
-              child: IconButton(
-                  icon: Icon(Icons.send, color: primaryTeal,),
-                  onPressed: () => _submitQuery(_textController.text)),
+
+
+              child: ListTile(
+
+                leading: IconButton(
+                  icon: Icon(Icons.camera_alt, color: primaryTeal, size: 35,),
+                ),
+
+                title: Container(
+                  height: 35,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(
+                        15)),
+                    color: Color.fromRGBO(220, 220, 220, 1),
+                  ),
+                  padding: EdgeInsets.only(left: 15),
+                  child: TextFormField(
+                    controller: messageInsert,
+                    decoration: InputDecoration(
+                      hintText: "Enter a Message...",
+                      hintStyle: TextStyle(
+                          color: Colors.black26
+                      ),
+                      border: InputBorder.none,
+                      focusedBorder: InputBorder.none,
+                      enabledBorder: InputBorder.none,
+                      errorBorder: InputBorder.none,
+                      disabledBorder: InputBorder.none,
+                    ),
+
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.black
+                    ),
+                    onChanged: (value) {
+
+                    },
+                  ),
+                ),
+
+                trailing: IconButton(
+
+                    icon: Icon(
+
+                      Icons.send,
+                      size: 30.0,
+                      color: primaryTeal,
+                    ),
+                    onPressed: () {
+
+                      if (messageInsert.text.isEmpty) {
+                        print("empty message");
+                      } else {
+                        setState(() {
+                          messsages.insert(0,
+                              {"data": 1, "message": messageInsert.text});
+                        });
+                        response(messageInsert.text);
+                        messageInsert.clear();
+                      }
+                      FocusScopeNode currentFocus = FocusScope.of(context);
+                      if (!currentFocus.hasPrimaryFocus) {
+                        currentFocus.unfocus();
+                      }
+                    }),
+
+              ),
+
             ),
+
+            SizedBox(
+              height: 15.0,
+            )
           ],
         ),
       ),
     );
   }
 
-  void agentResponse(query) async {
-    _textController.clear();
-    AuthGoogle authGoogle =
-    await AuthGoogle(fileJson: "assets/alzheimers-disease-292712-16f4ba5225ec.json").build();
-    Dialogflow dialogFlow =
-    Dialogflow(authGoogle: authGoogle, language: Language.english);
-    AIResponse response = await dialogFlow.detectIntent(query);
-    Facts message = Facts(
-      text: response.getMessage() ??
-          CardDialogflow(response.getListMessage()[0]).title,
-      name: "Flutter",
-      type: false,
-    );
-    setState(() {
-      messageList.insert(0, message);
-    });
-  }
+  //for better one i have use the bubble package check out the pubspec.yaml
 
-  void _submitQuery(String text) {
-    _textController.clear();
-    Facts message = new Facts(
-      text: text,
-      name: "User",
-      type: true,
-    );
-    setState(() {
-      messageList.insert(0, message);
-    });
-    agentResponse(text);
-  }
+  Widget chat(String message, int data) {
+    return Container(
+      padding: EdgeInsets.only(left: 20, right: 20),
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text("Your - Pal", style: GoogleFonts.acme(color: white, fontSize:30),),
-        backgroundColor: primaryTeal,
-        elevation: 0,
+      child: Row(
+        mainAxisAlignment: data == 1 ? MainAxisAlignment.end : MainAxisAlignment.start,
+        children: [
+
+          data == 0 ? Container(
+            height: 60,
+            width: 60,
+            child: CircleAvatar(
+              backgroundImage: AssetImage("assets/robot.png"),
+            ),
+          ) : Container(),
+
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Bubble(
+                radius: Radius.circular(15.0),
+                color: data == 0 ? Color.fromRGBO(23, 157, 139, 1) : Colors.orangeAccent,
+                elevation: 0.0,
+
+                child: Padding(
+                  padding: EdgeInsets.all(2.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Flexible(
+                          child: Container(
+                            constraints: BoxConstraints( maxWidth: 200),
+                            child: Text(
+                              message,
+                              style: TextStyle(
+                                  color: Colors.white, fontWeight: FontWeight.bold),
+                            ),
+                          ))
+                    ],
+                  ),
+                )),
+          ),
+
+
+          data == 1? Container(
+            height: 60,
+            width: 60,
+            child: CircleAvatar(
+              backgroundImage: AssetImage("assets/default.png"),
+            ),
+          ) : Container(),
+
+        ],
       ),
-      body: Column(children: <Widget>[
-        Flexible(
-            child: ListView.builder(
-              padding: EdgeInsets.all(8.0),
-              reverse: true, //To keep the latest messages at the bottom
-              itemBuilder: (_, int index) => messageList[index],
-              itemCount: messageList.length,
-            )),
-        _queryInputWidget(context),
-      ]),
     );
   }
 }
