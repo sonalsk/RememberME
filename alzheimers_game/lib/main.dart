@@ -1,10 +1,14 @@
 
+import 'package:alzheimers_game/screens/services/authservice.dart';
 import 'package:alzheimers_game/screens/splashscreen.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 
-void main() {
-  runApp(RememberME());
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(new RememberME());
 }
 
 class RememberME extends StatelessWidget {
@@ -16,7 +20,7 @@ class RememberME extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: AuthService().handleAuth(),
     );
   }
 }

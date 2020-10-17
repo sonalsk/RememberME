@@ -1,5 +1,5 @@
 import 'package:alzheimers_game/animations/fadeanimation.dart';
-import 'package:alzheimers_game/screens/login/login.dart';
+import 'package:alzheimers_game/screens/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:alzheimers_game/shared/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -73,7 +73,7 @@ class _SplashScreenState extends State<SplashScreen>
         if (status == AnimationStatus.completed) {
           Navigator.pop(context);
           Navigator.push(context,
-              PageTransition(type: PageTransitionType.fade, child: LogIn()));
+              PageTransition(type: PageTransitionType.fade, child: Home()));
         }
       });
   }

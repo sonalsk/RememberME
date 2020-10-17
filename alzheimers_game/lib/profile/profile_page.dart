@@ -1,3 +1,4 @@
+import 'package:alzheimers_game/screens/services/authservice.dart';
 import 'package:alzheimers_game/shared/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -65,6 +66,14 @@ class _ProfilePageState extends State<ProfilePage> {
                                   height: 160,
                                   fit: BoxFit.cover,
                                 )),
+
+                                    RaisedButton(
+                                      child: Text('Signout'),
+                                      onPressed: () {
+                                        AuthService().signOut();
+                                        Navigator.pop(context);
+                                      },
+                                    ),
                                 SizedBox(height: 10),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -97,6 +106,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                           fontWeight: FontWeight.w500,
                                           color: white.withOpacity(0.9),
                                         )),
+
+
                                   ],
                                 )
                               ]))

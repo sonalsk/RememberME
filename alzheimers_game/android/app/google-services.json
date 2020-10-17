@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "718737232279",
+    "firebase_url": "https://alzheimers-disease-292712.firebaseio.com",
+    "project_id": "alzheimers-disease-292712",
+    "storage_bucket": "alzheimers-disease-292712.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718737232279:android:ac6eb1e02e2e0263b7f4d2",
+        "android_client_info": {
+          "package_name": "com.example.alzheimers_game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718737232279-bkd5g4k59p5vgnlqmu1cnrh7b7mh6084.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmrTTbLVsNMdSQxtS6Kzpr1LBo50CY6Yw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718737232279-bkd5g4k59p5vgnlqmu1cnrh7b7mh6084.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
