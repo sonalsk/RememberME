@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "alzheimer-disease-dcuc",
+  "private_key_id": "278c1173a236afd05cd69482861284a1878ce42e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC7TzGHKSawqzNJ\nIcHi47Tn91jcZWsq6AWkvSEDIwzQw5HjeUiW1FE5dda99ahkT68ab3mOdBryNx6u\nf49g9reBa2sC7GJ1NwaChHUuz+0s/jUp6/KmqhTPggi3aEEmpmEwYTHk4Gk74dEb\nrv/WJ6uGF1U91Iz3EJadAuWEBloF8BFP8mkX9guMHU6znRv49c8KWtF9qGaub7B/\nlhL94nsm8gq9UWmqpz2Ys0p8CoE7tUzdUqy0qc734JPtnYXDEKPaZDI0VS41Iatn\nyXou7vOMDrAshfZMYR7TFA88fnooxrhKJqIozYAoIVxPnNC2Q4S/ODy5qjd4smgA\nY8aWrfsPAgMBAAECggEAAQpGLxAspsGADOhFS9t2kFrpoTKKsXM7GxPfN0W+Vx4m\n51BmmiYaG/ATgo6tvX4BNv4mw9315urb3osyXdgemglzvVFYTA0MrEa6KwCYKBLg\ncyETFDv+RE4neqplCsuLljCL+3QsbNrqztmeSRPxLInOfSh67nyUmGNTX2GrpeCk\nBvFrkcdRaWmQa7IHWY3pigZqJBi5KjEauH3BYMfag3US+y6mH80cMPPf7z0QjMda\nf/aWn9XpbQU0RihHGDKb8jsML06qxye2KC9quVuzDYmCLafGR11bBmLxOH5LVdIq\nUgfTNvwyVEL6883kc4fsDlu2kp4QTQZCFhWzFW/cXQKBgQDzvAU61/uqmF4q/Xpw\nyhSPTM+HaFzwXVkmm1IKHJB0ElhGl9lQe/jktAPT3UE+NK1hLt+dHBKrrGO5kHoG\nmQ2cJRNvXd4AtBQXdaAgPJ6ulg5n8jm65Fp52dgjg+J7S6Vs28KyPkUiHwydi/kV\no0EPHpyyghC4ULrgEqswHvI0awKBgQDEvEKjokludPHA5bP/IolA/Yn3eNNklvDQ\n0jG8ofLoQyqqsU+WBt9kWvd+erXqWqgodNtCJWcR9SzbNwQq3qa6iyn7HTb0WXeT\nt5LhUKCsmfVtpU2ikAb5KkvshSXJ0vrogtagG/x21fcACKKYqO4mPlbaU7D37yXu\nFl6UkBdc7QKBgQCL4WBvAP2iTofczFS03oUmKMMBx1dva2N60LEotHQC6XRYL1W8\n5ylUuCtqMBT9imXm3GvhUvc0J1+kY9Jkbvpsnqqkw45hgPf27r7TQXcgY2YpKc8P\n/3YdcHSnDU2xzRxHeWgnu60ZhBBNasOtM2BnOP5dRGAsJ8jYSF6O43PFuQKBgQCk\nFXBvEfe0zIylme+aJ6/aKJxdbsTA7LNFN0qMTXZPCVYYr3H1ax3+kXBCaQ44vAvs\nUipc7N0eOSKEY0pyhukARPlqm18uRUBaT42NprWbv3zXSjuKDh4CyqgwSIzP28ux\nCQ8A0taqNqKfwJP8R0j5VJ0T0yGSaD92Z+nSdqtFsQKBgEeagivR6SD3OOW2T0wE\n6JTn0geTPx68+PIMR1k2tmX02ibmgSy+Plo/jy1K1owrOdAcs25wRMbeIKt9T6/d\nf2vtngHhyXWKgShTk46Zav05VSj/yIoTIVtQkTOSK64tx3ARpeXQq1QC7TV2578T\n3e7x++zgGCNu+bq3o1zcqsSM\n-----END PRIVATE KEY-----\n",
+  "client_email": "alzheimer-disease-dcuc@alzheimer-disease-dcuc.iam.gserviceaccount.com",
+  "client_id": "116629050535738103678",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/alzheimer-disease-dcuc%40alzheimer-disease-dcuc.iam.gserviceaccount.com"
+}

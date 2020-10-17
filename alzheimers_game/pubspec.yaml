@@ -27,6 +27,8 @@ dependencies:
   firebase_auth: ^0.18.1+2
   cloud_firestore: ^0.14.1+3
   provider: ^4.3.2+2
+  bubble:
+  intl:
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -60,7 +62,8 @@ flutter:
     - assets/backgrounds/
     - assets/images/
     - assets/tests/
-    - assets/alzheimers-disease-292712-16f4ba5225ec.json
+    - assets/service.json
+    - assets/
 
   #   - images/a_dot_ham.jpeg
 

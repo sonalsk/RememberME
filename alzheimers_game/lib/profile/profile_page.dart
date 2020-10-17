@@ -1,3 +1,4 @@
+import 'package:alzheimers_game/screens/login/login.dart';
 import 'package:alzheimers_game/screens/services/authservice.dart';
 import 'package:alzheimers_game/shared/constants.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,7 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
       body: Stack(children: [
         Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Expanded(
                 flex: 4,
@@ -51,7 +53,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               child: Text("My Profile",
                                   textAlign: TextAlign.left,
                                   style: GoogleFonts.acme(
-                                    fontSize: 40,
+                                    fontSize: 60,
                                     fontWeight: FontWeight.bold,
                                     color: white,
                                   ))),
@@ -62,16 +64,21 @@ class _ProfilePageState extends State<ProfilePage> {
                                 ClipOval(
                                     child: Image.asset(
                                   'assets/images/profile_pic.png',
-                                  width: 160,
-                                  height: 160,
+                                  width: 180,
+                                  height: 180,
                                   fit: BoxFit.cover,
                                 )),
+                                    SizedBox(height: 10,),
 
                                     RaisedButton(
                                       child: Text('Signout'),
                                       onPressed: () {
                                         AuthService().signOut();
-                                        Navigator.pop(context);
+                                        Navigator.of(context).pop();
+                                        Navigator.of(context).push(new MaterialPageRoute(
+                                            builder: (BuildContext context) {
+                                              return LogIn();
+                                            }));
                                       },
                                     ),
                                 SizedBox(height: 10),
@@ -114,30 +121,6 @@ class _ProfilePageState extends State<ProfilePage> {
                         ])),
                   ),
                 ])),
-            Expanded(
-              flex: 5,
-              child: Container(
-                  decoration: BoxDecoration(
-                      color: white,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(50),
-                        topRight: Radius.circular(50),
-                      )),
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: CarouselSlider(
-                      enlargeCenterPage: true,
-                      enableInfiniteScroll: false,
-                      height: screenHeight * 0.3,
-                      scrollDirection: Axis.horizontal,
-                      items: [
-                        _buildStatCard('Clock Game', 'Thinking Power', null),
-                        _buildStatCard('Clock Game', 'Thinking Power', null),
-                        _buildStatCard('Clock Game', 'Thinking Power', null),
-                      ],
-                    ),
-                  )),
-            ),
           ],
         )
       ]),
