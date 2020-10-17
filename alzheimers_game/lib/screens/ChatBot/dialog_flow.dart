@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'facts_message.dart';
 
 class FlutterFactsChatBot extends StatefulWidget {
   FlutterFactsChatBot({Key key, this.title}) : super(key: key);
