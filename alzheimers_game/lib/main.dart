@@ -32,6 +32,7 @@ class RememberME extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       home: AuthService().handleAuth(),
+    ),
     );
 
   }
