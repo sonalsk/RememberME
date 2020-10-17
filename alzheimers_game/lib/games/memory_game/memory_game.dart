@@ -52,7 +52,7 @@ class _MemoryGameState extends State<MemoryGame> {
           title: Text('Memory Game',
               style: GoogleFonts.acme(
                 color: white,
-                fontSize: 30,
+                fontSize: 35,
                 fontWeight: FontWeight.bold,
               )),
           backgroundColor: primaryTeal),
@@ -157,7 +157,7 @@ class _MemoryGameState extends State<MemoryGame> {
               ),
             )
           : Container(
-              color: primaryTeal,
+              color: white,
               // decoration: BoxDecoration(
               //   image: DecorationImage(
               //     image: AssetImage("Images/jungle4.png"),
@@ -165,101 +165,113 @@ class _MemoryGameState extends State<MemoryGame> {
               //   ),
               // ),
               width: MediaQuery.of(context).size.width,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  SizedBox(
-                    height: 5,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      gameLevel = "easy";
-                      setState(() {
-                        letsPlay = true;
-                      });
-                      reStart();
-                    },
-                    child: FractionallySizedBox(
-                      widthFactor: 0.7,
-                      child: Container(
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          //border: Border.all(width: 2, color: Colors.black),
-                          color: white,
-                          borderRadius: BorderRadius.circular(32),
-                        ),
-                        child: Text(
-                          "EASY",
-                          style: TextStyle(
-                              color: primaryTeal,
-                              fontSize: 28,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      gameLevel = "medium";
-                      setState(() {
-                        letsPlay = true;
-                      });
-                      reStart();
-                    },
-                    child: FractionallySizedBox(
-                      widthFactor: 0.7,
-                      child: Container(
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          //border: Border.all(width: 2, color: Colors.black),
-                          color: white,
-                          borderRadius: BorderRadius.circular(32),
-                        ),
-                        child: Text(
-                          "MEDIUM",
-                          style: TextStyle(
-                              color: primaryTeal,
-                              fontSize: 28,
-                              fontWeight: FontWeight.bold),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 70.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    // //SizedBox(
+                    //   height: 5,
+                    // ),
+                    GestureDetector(
+                      onTap: () {
+                        gameLevel = "easy";
+                        setState(() {
+                          letsPlay = true;
+                        });
+                        reStart();
+                      },
+                      child: FractionallySizedBox(
+                        widthFactor: 0.7,
+                        child: Container(
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            //border: Border.all(width: 2, color: Colors.black),
+                            color: primaryTeal,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 10.0),
+                            child: Text(
+                              "EASY",
+                              style: GoogleFonts.signika(
+                                  color: white,
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      gameLevel = "hard";
-                      setState(() {
-                        letsPlay = true;
-                      });
-                      reStart();
-                    },
-                    child: FractionallySizedBox(
-                      widthFactor: 0.7,
-                      child: Container(
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          //border: Border.all(width: 2, color: Colors.black),
-                          color: white,
-                          borderRadius: BorderRadius.circular(32),
-                        ),
-                        child: Text(
-                          "HARD",
-                          style: TextStyle(
-                              color: primaryTeal,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold),
+                    // SizedBox(
+                    //   height: 20,
+                    // ),
+                    GestureDetector(
+                      onTap: () {
+                        gameLevel = "medium";
+                        setState(() {
+                          letsPlay = true;
+                        });
+                        reStart();
+                      },
+                      child: FractionallySizedBox(
+                        widthFactor: 0.7,
+                        child: Container(
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            //border: Border.all(width: 2, color: Colors.black),
+                            color: primaryTeal,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Padding(
+                           padding: const EdgeInsets.symmetric(vertical: 10.0),
+                            child: Text(
+                              "MEDIUM",
+                              style: GoogleFonts.signika(
+                                  color: white,
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                    // SizedBox(
+                    //   height: 20,
+                    // ),
+                    GestureDetector(
+                      onTap: () {
+                        gameLevel = "hard";
+                        setState(() {
+                          letsPlay = true;
+                        });
+                        reStart();
+                      },
+                      child: FractionallySizedBox(
+                        widthFactor: 0.7,
+                        child: Container(
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            //border: Border.all(width: 2, color: Colors.black),
+                            color: primaryTeal,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 10.0),
+                            child: Text(
+                              "HARD",
+                              style: GoogleFonts.signika(
+                                  color: white,
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
     );
