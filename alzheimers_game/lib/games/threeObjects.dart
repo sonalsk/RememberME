@@ -4,7 +4,6 @@ import 'package:flutter/rendering.dart';
 class ThreeProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     MediaQueryData queryData;
     queryData = MediaQuery.of(context);
 
@@ -13,15 +12,12 @@ class ThreeProducts extends StatelessWidget {
 
     return Scaffold(
       body: Container(
-
           decoration: BoxDecoration(
             color: Colors.lightBlue,
           ),
-
-          child:Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-
               Container(
                 margin: EdgeInsets.only(bottom: width * 0.15),
                 child: Text(
@@ -34,33 +30,26 @@ class ThreeProducts extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-
               Container(
                 height: height * 0.15,
-
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-
                     Container(
                       width: width * 0.25,
                       color: Colors.deepPurple,
                     ),
-
                     Container(
                       width: width * 0.25,
                       color: Colors.purple,
                     ),
-
                     Container(
                       width: width * 0.25,
                       color: Colors.deepOrange,
                     ),
-
                   ],
                 ),
               ),
-
               Container(
                 margin: EdgeInsets.only(top: width * 0.15, bottom: 0),
                 child: RaisedButton(
@@ -68,27 +57,22 @@ class ThreeProducts extends StatelessWidget {
                   child: Text(
                     "GO",
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.deepOrange
-                    ),
+                        fontWeight: FontWeight.bold, color: Colors.deepOrange),
                   ),
-                  onPressed: (){
+                  onPressed: () {
                     Navigator.pop(context);
-                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
                       return Opposite(
                         width: width,
                         height: height,
                       );
-                    })
-                    );
+                    }));
                   },
                 ),
               ),
-
             ],
-          )
-
-      ),
+          )),
     );
   }
 }
@@ -100,13 +84,12 @@ class Opposite extends StatefulWidget {
 
   @override
   _OppositeState createState() => _OppositeState(
-    width: width,
-    height: height,
-  );
+        width: width,
+        height: height,
+      );
 }
 
 class _OppositeState extends State<Opposite> {
-
   double width;
   double height;
   _OppositeState({this.width, this.height});
@@ -115,35 +98,49 @@ class _OppositeState extends State<Opposite> {
   int score = 0;
 
   var inputs = [
-    {"Image1" : 'assets/images/pic.png', "Image2" : 'assets/images/pic.png', "Image3" : 'assets/images/tgate.png'},
-    {"Image1" : 'assets/images/pic.png', "Image2" : 'assets/images/pic.png', "Image3" : 'assets/images/pic.png'},
-    {"Image1" : 'assets/images/pic.png', "Image2" : 'assets/images/tgate.png', "Image3" : 'assets/images/pic.png'},
-    {"Image1" : 'assets/images/pic.png', "Image2" : 'assets/images/pic.png', "Image3" : 'assets/images/pic.png'},
-    {"Image1" : 'assets/images/tgate.png', "Image2" : 'assets/images/pic.png', "Image3" : 'assets/images/pic.png'},
+    {
+      "Image1": 'assets/images/pic.png',
+      "Image2": 'assets/images/pic.png',
+      "Image3": 'assets/images/tgate.png'
+    },
+    {
+      "Image1": 'assets/images/pic.png',
+      "Image2": 'assets/images/pic.png',
+      "Image3": 'assets/images/pic.png'
+    },
+    {
+      "Image1": 'assets/images/pic.png',
+      "Image2": 'assets/images/tgate.png',
+      "Image3": 'assets/images/pic.png'
+    },
+    {
+      "Image1": 'assets/images/pic.png',
+      "Image2": 'assets/images/pic.png',
+      "Image3": 'assets/images/pic.png'
+    },
+    {
+      "Image1": 'assets/images/tgate.png',
+      "Image2": 'assets/images/pic.png',
+      "Image3": 'assets/images/pic.png'
+    },
   ];
 
-  buildList() async{
-    for(int i = 0; i < inputs.length; i++){
+  buildList() async {
+    for (int i = 0; i < inputs.length; i++) {
       final element = inputs[i];
 
       oppList.add(
-
         Container(
           height: height * 0.12,
           margin: EdgeInsets.only(top: width * 0.08),
-
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-
-
             children: <Widget>[
-
               InkWell(
                   child: Container(
                     width: width * 0.25,
                     margin: EdgeInsets.only(bottom: width * 0.01),
-
                     decoration: BoxDecoration(
                       color: Colors.white,
                       image: DecorationImage(
@@ -152,7 +149,6 @@ class _OppositeState extends State<Opposite> {
                       ),
                     ),
                   ),
-
                   onTap: () {
                     if (i == 4) {
                       showDialog(
@@ -162,15 +158,12 @@ class _OppositeState extends State<Opposite> {
                             title: Text(
                               'YOU GOT IT!',
                               style: TextStyle(
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.bold
-                              ),
+                                  fontSize: 22, fontWeight: FontWeight.bold),
                             ),
                           );
                         },
                       );
-                    }
-                    else {
+                    } else {
                       showDialog(
                         context: context,
                         builder: (BuildContext context) {
@@ -178,22 +171,17 @@ class _OppositeState extends State<Opposite> {
                             title: Text(
                               'WRONG! TRY AGAIN',
                               style: TextStyle(
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.bold
-                              ),
+                                  fontSize: 22, fontWeight: FontWeight.bold),
                             ),
                           );
                         },
                       );
                     }
-                  }
-              ),
-
+                  }),
               InkWell(
                 child: Container(
                   width: width * 0.25,
                   margin: EdgeInsets.only(bottom: width * 0.01),
-
                   decoration: BoxDecoration(
                     color: Colors.white,
                     image: DecorationImage(
@@ -202,7 +190,6 @@ class _OppositeState extends State<Opposite> {
                     ),
                   ),
                 ),
-
                 onTap: () {
                   if (i == 2) {
                     showDialog(
@@ -212,15 +199,12 @@ class _OppositeState extends State<Opposite> {
                           title: Text(
                             'YOU GOT IT!',
                             style: TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold
-                            ),
+                                fontSize: 22, fontWeight: FontWeight.bold),
                           ),
                         );
                       },
                     );
-                  }
-                  else {
+                  } else {
                     showDialog(
                       context: context,
                       builder: (BuildContext context) {
@@ -228,9 +212,7 @@ class _OppositeState extends State<Opposite> {
                           title: Text(
                             'WRONG! TRY AGAIN',
                             style: TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold
-                            ),
+                                fontSize: 22, fontWeight: FontWeight.bold),
                           ),
                         );
                       },
@@ -238,12 +220,10 @@ class _OppositeState extends State<Opposite> {
                   }
                 },
               ),
-
               InkWell(
                 child: Container(
                   width: width * 0.25,
                   margin: EdgeInsets.only(bottom: width * 0.01),
-
                   decoration: BoxDecoration(
                     color: Colors.white,
                     image: DecorationImage(
@@ -252,7 +232,6 @@ class _OppositeState extends State<Opposite> {
                     ),
                   ),
                 ),
-
                 onTap: () {
                   if (i == 0) {
                     showDialog(
@@ -262,15 +241,12 @@ class _OppositeState extends State<Opposite> {
                           title: Text(
                             'YOU GOT IT!',
                             style: TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold
-                            ),
+                                fontSize: 22, fontWeight: FontWeight.bold),
                           ),
                         );
                       },
                     );
-                  }
-                  else {
+                  } else {
                     showDialog(
                       context: context,
                       builder: (BuildContext context) {
@@ -278,18 +254,14 @@ class _OppositeState extends State<Opposite> {
                           title: Text(
                             'WRONG! TRY AGAIN',
                             style: TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold
-                            ),
+                                fontSize: 22, fontWeight: FontWeight.bold),
                           ),
                         );
                       },
                     );
                   }
                 },
-
               ),
-
             ],
           ),
         ),
@@ -297,14 +269,13 @@ class _OppositeState extends State<Opposite> {
     }
   }
 
-  void initState(){
+  void initState() {
     buildList();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-
     MediaQueryData queryData;
     queryData = MediaQuery.of(context);
     double height = queryData.size.height;
@@ -312,23 +283,17 @@ class _OppositeState extends State<Opposite> {
 
     return Scaffold(
       resizeToAvoidBottomPadding: false,
-
       body: Container(
         alignment: Alignment.center,
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-
         decoration: BoxDecoration(
           color: Colors.lightBlue,
         ),
-
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-
           children: <Widget>[
-
             Container(
-
               child: Text(
                 "FIND THE IMAGES",
                 style: TextStyle(
@@ -339,16 +304,14 @@ class _OppositeState extends State<Opposite> {
                 textAlign: TextAlign.center,
               ),
             ),
-
             Container(
-              height: height * 0.8,
+              height: height * 0.5,
               child: ListView(
                 scrollDirection: Axis.vertical,
                 padding: EdgeInsets.only(top: 0, bottom: 0),
                 children: oppList,
               ),
             ),
-
           ],
         ),
       ),

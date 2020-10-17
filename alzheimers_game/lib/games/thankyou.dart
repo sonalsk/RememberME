@@ -11,37 +11,36 @@ class ThankYou extends StatefulWidget {
 class _ThankYouState extends State<ThankYou> {
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
         backgroundColor: primaryTeal,
-        appBar: AppBar(
-          backgroundColor: primaryTeal,
-          elevation: 0.0,
-          leading: IconButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            icon: Icon(Icons.arrow_back_ios),
-            color: white,
-          ),
-        ),
         body: Center(
             child: Container(
+              decoration: BoxDecoration(
                 color: white,
+                borderRadius: BorderRadius.circular(30)
+              ),
+              width: MediaQuery.of(context).size.width * 0.8,
+              height: MediaQuery.of(context).size.height * 0.5,
+                
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text("🎉", style: TextStyle(fontSize: 50)),
-                    Text("Thank you for taking this test!",
-                        style: GoogleFonts.acme(
-                          fontSize: 32.0,
-                          fontWeight: FontWeight.w500,
-                          color: primaryTeal,
-                        )),
+                    Text("🎉", style: TextStyle(fontSize: 80)),
+                    SizedBox(height: 30.0),
+                    Center(
+                        child: Container(
+                          alignment: Alignment.center,
+                      width: MediaQuery.of(context).size.width * 0.8,
+                      child: Text("You have successfully completed the test!",
+                          style: GoogleFonts.acme(
+                            fontSize: 24.0,
+                            fontWeight: FontWeight.w500,
+                            color: primaryTeal,
+                          )),
+                    )),
                     SizedBox(height: 70.0),
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: RaisedButton(
+                    RaisedButton(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5.0),
                         ),
@@ -55,17 +54,17 @@ class _ThankYouState extends State<ThankYou> {
                             padding: const EdgeInsets.all(15.0),
                             child: Container(
                               alignment: Alignment.center,
-                              height: 50.0,
-                              width: width,
+                              height: 30.0,
+                              width: MediaQuery.of(context).size.width * 0.5,
                               child: Text("End Test",
                                   style: GoogleFonts.signika(
-                                      color: primaryTeal,
+                                      color: black,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 22.0)),
+                                      fontSize: 25.0)),
                             )),
-                        color: white.withOpacity(.8),
+                        color: white.withOpacity(.5),
                       ),
-                    ),
+                    
                   ],
                 ))));
   }

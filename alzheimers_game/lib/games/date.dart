@@ -39,7 +39,7 @@ class _DateCheckState extends State<DateCheck> {
         ),
         body: Column(children: [
           Expanded(
-            flex: 3,
+            flex: 2,
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 20.0),
               alignment: Alignment.center,
@@ -109,13 +109,13 @@ class _DateCheckState extends State<DateCheck> {
                                       Icon(
                                         Icons.date_range,
                                         size: 22.0,
-                                        color: Colors.teal,
+                                        color: primaryTeal,
                                       ),
                                       SizedBox(width: 5.0),
                                       Text(
                                         " $_date",
                                         style: GoogleFonts.signika(
-                                            color: Colors.teal,
+                                            color: primaryTeal,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 22.0),
                                       ),
@@ -127,7 +127,7 @@ class _DateCheckState extends State<DateCheck> {
                             Text(
                               "  Change",
                               style: TextStyle(
-                                  color: Colors.teal,
+                                  color: primaryTeal,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 22.0),
                             ),
@@ -135,7 +135,7 @@ class _DateCheckState extends State<DateCheck> {
                         ),
                       ),
                     ),
-                    color: white.withOpacity(.8),
+                    color: white.withOpacity(.5),
                   ),
                 ),
               ),

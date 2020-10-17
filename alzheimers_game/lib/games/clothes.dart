@@ -1,3 +1,4 @@
+import 'package:alzheimers_game/games/identify1.dart';
 import 'package:alzheimers_game/games/thankyou.dart';
 import 'package:alzheimers_game/scoped_models/model.dart';
 import 'package:flutter/material.dart';
@@ -85,13 +86,13 @@ class _ClothesCheckState extends State<ClothesCheck> {
                                 width: width,
                                 child: Text("Yes",
                                     style: GoogleFonts.signika(
-                                        color: Colors.teal,
+                                        color: black,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 22.0)),
                               )),
                           color: selected1
                               ? primaryTeal.withOpacity(.5)
-                              : white.withOpacity(.8),
+                              : white.withOpacity(.5),
                         ),
                         SizedBox(height: 10),
                         RaisedButton(
@@ -115,13 +116,13 @@ class _ClothesCheckState extends State<ClothesCheck> {
                                 width: width,
                                 child: Text("Yes but I face some problems",
                                     style: GoogleFonts.signika(
-                                        color: Colors.teal,
+                                        color: black,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 22.0)),
                               )),
                           color: selected2
                               ? primaryTeal.withOpacity(.5)
-                              : white.withOpacity(.8),
+                              : white.withOpacity(.5),
                         ),
                         SizedBox(height: 10),
                         RaisedButton(
@@ -134,7 +135,7 @@ class _ClothesCheckState extends State<ClothesCheck> {
                               selected1 = false;
                               selected2 = false;
                               selected3 = true;
-                              clothesCheck += 2;
+                              clothesCheck += 0;
                             });
                           },
                           child: Padding(
@@ -145,13 +146,13 @@ class _ClothesCheckState extends State<ClothesCheck> {
                                 width: width,
                                 child: Text("No",
                                     style: GoogleFonts.signika(
-                                        color: Colors.teal,
+                                        color: black,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 22.0)),
                               )),
                           color: selected3
                               ? primaryTeal.withOpacity(.5)
-                              : white.withOpacity(.8),
+                              : white.withOpacity(.5),
                         ),
                       ])),
             ),
@@ -163,7 +164,7 @@ class _ClothesCheckState extends State<ClothesCheck> {
           onPressed: () {
             setState(() => model.addScore(clothesCheck));
             Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => ThankYou()));
+                .push(MaterialPageRoute(builder: (context) => IdentifyObj1()));
           },
         ),
       );

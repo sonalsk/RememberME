@@ -77,13 +77,13 @@ class _GoodSpiritCheckState extends State<GoodSpiritCheck> {
                                 width: 120.0,
                                 child: Text("YES",
                                     style: GoogleFonts.signika(
-                                        color: Colors.teal,
+                                        color: black,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 22.0)),
                               )),
                           color: selected1
                               ? primaryTeal.withOpacity(.5)
-                              : white.withOpacity(.8),
+                              : white.withOpacity(.5),
                         ),
                         RaisedButton(
                           shape: RoundedRectangleBorder(
@@ -105,13 +105,13 @@ class _GoodSpiritCheckState extends State<GoodSpiritCheck> {
                                 width: 120.0,
                                 child: Text("NO",
                                     style: GoogleFonts.signika(
-                                        color: Colors.teal,
+                                        color: black,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 22.0)),
                               )),
                           color: selected2
                               ? primaryTeal.withOpacity(.5)
-                              : white.withOpacity(.8),
+                              : white.withOpacity(.5),
                         )
                       ])),
             ),
@@ -121,7 +121,10 @@ class _GoodSpiritCheckState extends State<GoodSpiritCheck> {
           backgroundColor: primaryTeal,
           child: Icon(Icons.arrow_forward_ios, color: white),
           onPressed: () {
-            setState(() => model.addScore(goodSpiritCheck));
+            setState(() {
+              model.addScore(goodSpiritCheck);
+              model.addEmoScore(goodSpiritCheck);
+            });
             Navigator.of(context)
                 .push(MaterialPageRoute(builder: (context) => NewsCheck()));
           },

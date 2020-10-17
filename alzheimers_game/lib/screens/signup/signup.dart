@@ -132,7 +132,7 @@ class _SignUpState extends State<SignUp> {
                               child: TextFormField(
                                 decoration: InputDecoration(
                                     border: InputBorder.none,
-                                    hintText: "Email",
+                                    hintText: "PhoneNumber",
                                     hintStyle: GoogleFonts.signika(
                                       fontSize: 18.0,
                                       color: grey[400],
@@ -144,7 +144,7 @@ class _SignUpState extends State<SignUp> {
                               child: TextFormField(
                                 decoration: InputDecoration(
                                     border: InputBorder.none,
-                                    hintText: "Password",
+                                    hintText: "OTP",
                                     hintStyle: GoogleFonts.signika(
                                       fontSize: 18.0,
                                       color: grey[400],

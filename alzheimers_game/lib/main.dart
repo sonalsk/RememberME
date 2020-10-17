@@ -1,4 +1,6 @@
 
+import 'package:alzheimers_game/profile/profile_page.dart';
+import 'package:alzheimers_game/screens/home/home.dart';
 import 'package:alzheimers_game/screens/services/authservice.dart';
 import 'package:alzheimers_game/screens/splashscreen.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +33,7 @@ class RememberME extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
 
-      home: AuthService().handleAuth(),
+      home:Evaluation(),
     ),
     );
 

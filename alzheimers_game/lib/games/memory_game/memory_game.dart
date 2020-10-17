@@ -28,13 +28,15 @@ class _MemoryGameState extends State<MemoryGame> {
 
     gridViewTiles = myPairs;
 
-    if (gameLevel == "easy") {
-      noOfQuestion = 6;
-    } else if (gameLevel == "medium") {
-      noOfQuestion = 8;
-    } else if (gameLevel == "hard") {
-      noOfQuestion = 12;
-    }
+    noOfQuestion = 6;
+
+    // if (gameLevel == "easy") {
+    //   noOfQuestion = 6;
+    // } else if (gameLevel == "medium") {
+    //   noOfQuestion = 8;
+    // } else if (gameLevel == "hard") {
+    //   noOfQuestion = 12;
+    // }
 
     Future.delayed(const Duration(seconds: 7), () {
       setState(() {
@@ -61,38 +63,8 @@ class _MemoryGameState extends State<MemoryGame> {
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 50, horizontal: 20),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(
-                      height: 10,
-                    ),
-                    points != noOfQuestion
-                        ? Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                "$points/$noOfQuestion",
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  fontSize: 36,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              Text(
-                                "Points",
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
-                          )
-                        : Container(),
-                    SizedBox(
-                      height: 20,
-                    ),
                     points != noOfQuestion
                         ? GridView(
                             shrinkWrap: true,
@@ -168,12 +140,10 @@ class _MemoryGameState extends State<MemoryGame> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 70.0),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    // //SizedBox(
-                    //   height: 5,
-                    // ),
+                   Text("Match the pairs of tiles with the same animals", style: primaryFont),
                     GestureDetector(
                       onTap: () {
                         gameLevel = "easy";
@@ -194,7 +164,7 @@ class _MemoryGameState extends State<MemoryGame> {
                           child: Padding(
                             padding: const EdgeInsets.symmetric(vertical: 10.0),
                             child: Text(
-                              "EASY",
+                              'Begin',
                               style: GoogleFonts.signika(
                                   color: white,
                                   fontSize: 28,
@@ -207,69 +177,69 @@ class _MemoryGameState extends State<MemoryGame> {
                     // SizedBox(
                     //   height: 20,
                     // ),
-                    GestureDetector(
-                      onTap: () {
-                        gameLevel = "medium";
-                        setState(() {
-                          letsPlay = true;
-                        });
-                        reStart();
-                      },
-                      child: FractionallySizedBox(
-                        widthFactor: 0.7,
-                        child: Container(
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            //border: Border.all(width: 2, color: Colors.black),
-                            color: primaryTeal,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Padding(
-                           padding: const EdgeInsets.symmetric(vertical: 10.0),
-                            child: Text(
-                              "MEDIUM",
-                              style: GoogleFonts.signika(
-                                  color: white,
-                                  fontSize: 28,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    // SizedBox(
-                    //   height: 20,
+                    // GestureDetector(
+                    //   onTap: () {
+                    //     gameLevel = "medium";
+                    //     setState(() {
+                    //       letsPlay = true;
+                    //     });
+                    //     reStart();
+                    //   },
+                    //   child: FractionallySizedBox(
+                    //     widthFactor: 0.7,
+                    //     child: Container(
+                    //       alignment: Alignment.center,
+                    //       decoration: BoxDecoration(
+                    //         //border: Border.all(width: 2, color: Colors.black),
+                    //         color: primaryTeal,
+                    //         borderRadius: BorderRadius.circular(10),
+                    //       ),
+                    //       child: Padding(
+                    //         padding: const EdgeInsets.symmetric(vertical: 10.0),
+                    //         child: Text(
+                    //           "MEDIUM",
+                    //           style: GoogleFonts.signika(
+                    //               color: white,
+                    //               fontSize: 28,
+                    //               fontWeight: FontWeight.bold),
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ),
                     // ),
-                    GestureDetector(
-                      onTap: () {
-                        gameLevel = "hard";
-                        setState(() {
-                          letsPlay = true;
-                        });
-                        reStart();
-                      },
-                      child: FractionallySizedBox(
-                        widthFactor: 0.7,
-                        child: Container(
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            //border: Border.all(width: 2, color: Colors.black),
-                            color: primaryTeal,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 10.0),
-                            child: Text(
-                              "HARD",
-                              style: GoogleFonts.signika(
-                                  color: white,
-                                  fontSize: 28,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                    // // SizedBox(
+                    // //   height: 20,
+                    // // ),
+                    // GestureDetector(
+                    //   onTap: () {
+                    //     gameLevel = "hard";
+                    //     setState(() {
+                    //       letsPlay = true;
+                    //     });
+                    //     reStart();
+                    //   },
+                    //   child: FractionallySizedBox(
+                    //     widthFactor: 0.7,
+                    //     child: Container(
+                    //       alignment: Alignment.center,
+                    //       decoration: BoxDecoration(
+                    //         //border: Border.all(width: 2, color: Colors.black),
+                    //         color: primaryTeal,
+                    //         borderRadius: BorderRadius.circular(10),
+                    //       ),
+                    //       child: Padding(
+                    //         padding: const EdgeInsets.symmetric(vertical: 10.0),
+                    //         child: Text(
+                    //           "HARD",
+                    //           style: GoogleFonts.signika(
+                    //               color: white,
+                    //               fontSize: 28,
+                    //               fontWeight: FontWeight.bold),
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
@@ -342,7 +312,7 @@ class _TileState extends State<Tile> {
                 ? myPairs[widget.tileIndex].getImageAssetPath()
                 : widget.imageAssetPath)
             : Container(
-                child: Image.asset("assets/correct.png"),
+                child: Image.asset("assets/tests/correct.png"),
               ),
       ),
     );

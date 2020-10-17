@@ -77,13 +77,13 @@ class _AppNameCheckState extends State<AppNameCheck> {
                                 //width: 120.0,
                                 child: Text("Help ME",
                                     style: GoogleFonts.signika(
-                                        color: Colors.teal,
+                                        color: black,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 30.0)),
                               )),
                           color: selected1
                               ? primaryTeal.withOpacity(.5)
-                              : white.withOpacity(.8),
+                              : white.withOpacity(.5),
                         ),
                         RaisedButton(
                           shape: RoundedRectangleBorder(
@@ -105,13 +105,13 @@ class _AppNameCheckState extends State<AppNameCheck> {
                                 //width: 120.0,
                                 child: Text("Remember ME",
                                     style: GoogleFonts.signika(
-                                        color: Colors.teal,
+                                        color: black,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 30.0)),
                               )),
                           color: selected2
                               ? primaryTeal.withOpacity(.5)
-                              : white.withOpacity(.8),
+                              : white.withOpacity(.5),
                         )
                       ])),
             ),
