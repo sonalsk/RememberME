@@ -1,3 +1,4 @@
+import 'package:alzheimers_game/games/validLetters1.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:alzheimers_game/shared/constants.dart';
@@ -33,7 +34,7 @@ class Time extends StatelessWidget {
   }
 }
 
-int FINAL_SCORE = 0;
+int clock_score = 0;
 
 class TimeDragTarget extends StatefulWidget {
   @override
@@ -60,7 +61,7 @@ class _TimeDragTargetState extends State<TimeDragTarget> {
       onAccept: (data) {
         setState(() {
           if (Time == data) {
-            FINAL_SCORE++;
+            clock_score++;
           }
           if (data == 10.toString() ||
               data == 11.toString() ||
@@ -241,40 +242,38 @@ class ScorePage extends StatelessWidget {
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assets/images/ClockBG.png"),
-                  fit: BoxFit.cover
-              )
-          ),
+                  fit: BoxFit.cover)),
           child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                  decoration: BoxDecoration(
-                      borderRadius: new BorderRadius.only(
-                        topLeft: const Radius.circular(10.0),
-                        topRight: const Radius.circular(10.0),
-                        bottomLeft: const Radius.circular(10.0),
-                        bottomRight: const Radius.circular(10.0),
-                      ),
-                      color: Colors.white),
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Center(
-                      child: Text("🎉 Your Score : " + FINAL_SCORE.toString(),
-                      style: GoogleFonts.signika(
-                        fontSize: 30,
-
-                      )),
-                    ),
-                  ))
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                      decoration: BoxDecoration(
+                          borderRadius: new BorderRadius.only(
+                            topLeft: const Radius.circular(10.0),
+                            topRight: const Radius.circular(10.0),
+                            bottomLeft: const Radius.circular(10.0),
+                            bottomRight: const Radius.circular(10.0),
+                          ),
+                          color: Colors.white),
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Center(
+                          child:
+                              Text("🎉 Your Score : " + clock_score.toString(),
+                                  style: GoogleFonts.signika(
+                                    fontSize: 30,
+                                  )),
+                        ),
+                      ))
+                ],
+              )
             ],
-          )
-        ],
-      )),
+          )),
     );
   }
 }
@@ -284,21 +283,31 @@ class _ClockGameState extends State<ClockGame> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryTeal,
+      appBar: AppBar(
+        backgroundColor: primaryTeal,
+        elevation: 0.0,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back_ios),
+          color: white,
+        ),
+      ),
       body: Container(
         padding: EdgeInsets.only(bottom: 30.0),
         decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/ClockBG.png"),
-            fit: BoxFit.cover
-          )
-        ),
+            image: DecorationImage(
+                image: AssetImage("assets/images/ClockBG.png"),
+                fit: BoxFit.cover)),
         child: Padding(
-          padding: const EdgeInsets.only(bottom: 50.0, left: 10.0, right: 10.0, top: 70.0),
+          padding: const EdgeInsets.only(
+              bottom: 30.0, left: 10.0, right: 10.0, top: 30.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                'Clock Game',
+                'Place the numbers in the clock at thier correct positions',
                 style: GoogleFonts.acme(
                   fontSize: 40.0,
                   color: white,
@@ -307,34 +316,43 @@ class _ClockGameState extends State<ClockGame> {
               ),
               Clock(),
               SizedBox(
-                height: 20.0,
+                height: 30.0,
               ),
               Expanded(
                 flex: 4,
                 child: Time_grid(),
               ),
-              RaisedButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0)
-                ),
-                color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
-                  child: Text(
-                    "Score",
-                    style: GoogleFonts.signika(fontWeight: FontWeight.w500, fontSize: 26),
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ScorePage()),
-                  );
-                },
-              )
+              // RaisedButton(
+              //   shape: RoundedRectangleBorder(
+              //       borderRadius: BorderRadius.circular(10.0)),
+              //   color: Colors.white,
+              //   child: Padding(
+              //     padding: const EdgeInsets.symmetric(
+              //         horizontal: 30.0, vertical: 10.0),
+              //     child: Text(
+              //       "Score",
+              //       style: GoogleFonts.signika(
+              //           fontWeight: FontWeight.w500, fontSize: 26),
+              //     ),
+              //   ),
+              //   onPressed: () {
+              //     Navigator.push(
+              //       context,
+              //       MaterialPageRoute(builder: (context) => ScorePage()),
+              //     );
+              //   },
+              // )
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: white,
+        child: Icon(Icons.arrow_forward_ios, color: primaryTeal),
+        onPressed: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => ValidLetterCheck1()));
+        },
       ),
     );
   }
