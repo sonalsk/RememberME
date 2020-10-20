@@ -70,7 +70,7 @@ class _TimeDragTargetState extends State<TimeDragTarget> {
               data == 12.toString()) {
             TimeHolder = Container(
               decoration:
-                  BoxDecoration(shape: BoxShape.circle, color: Colors.green),
+              BoxDecoration(shape: BoxShape.circle, color: Colors.green),
               padding: EdgeInsets.only(left: 0),
               height: 25,
               width: 25,
@@ -85,7 +85,7 @@ class _TimeDragTargetState extends State<TimeDragTarget> {
           } else {
             TimeHolder = Container(
               decoration:
-                  BoxDecoration(shape: BoxShape.circle, color: Colors.green),
+              BoxDecoration(shape: BoxShape.circle, color: Colors.green),
               padding: EdgeInsets.only(left: 5),
               height: 25,
               width: 25,
@@ -142,7 +142,7 @@ class Clock extends StatelessWidget {
     return Container(
       height: height * 0.35,
       width: width * 0.7,
-      margin: EdgeInsets.only(top: 70),
+      // margin: EdgeInsets.only(top: 70),
       decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage("assets/images/clock.png"), fit: BoxFit.fill),
@@ -157,17 +157,17 @@ class Clock extends StatelessWidget {
           Row(
             children: [
               Container(
-                margin: EdgeInsets.fromLTRB(98, 80, 0, 0),
+                margin: EdgeInsets.fromLTRB(90, 60, 0, 0),
                 child: TimeDragTarget(
                   Time: 11.toString(),
                 ),
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(10, 58, 0, 0),
+                margin: EdgeInsets.fromLTRB(10, 40, 0, 0),
                 child: TimeDragTarget(Time: 12.toString()),
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(12, 75, 0, 0),
+                margin: EdgeInsets.fromLTRB(8, 60, 0, 0),
                 child: TimeDragTarget(Time: 1.toString()),
               ),
             ],
@@ -175,7 +175,7 @@ class Clock extends StatelessWidget {
           Row(
             children: [
               Container(
-                margin: EdgeInsets.fromLTRB(70, 7, 0, 0),
+                margin: EdgeInsets.fromLTRB(60, 5, 0, 0),
                 child: TimeDragTarget(Time: 10.toString()),
               ),
               Container(
@@ -187,7 +187,7 @@ class Clock extends StatelessWidget {
           Row(
             children: [
               Container(
-                margin: EdgeInsets.fromLTRB(60, 15, 0, 0),
+                margin: EdgeInsets.fromLTRB(50, 5, 0, 0),
                 child: TimeDragTarget(Time: 9.toString()),
               ),
               Container(
@@ -199,7 +199,7 @@ class Clock extends StatelessWidget {
           Row(
             children: [
               Container(
-                margin: EdgeInsets.fromLTRB(70, 15, 0, 0),
+                margin: EdgeInsets.fromLTRB(60, 15, 0, 0),
                 child: TimeDragTarget(Time: 8.toString()),
               ),
               Container(
@@ -211,15 +211,15 @@ class Clock extends StatelessWidget {
           Row(
             children: [
               Container(
-                margin: EdgeInsets.fromLTRB(100, 0, 5, 12),
+                margin: EdgeInsets.fromLTRB(90, 0, 5, 12),
                 child: TimeDragTarget(Time: 7.toString()),
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(5, 2, 5, 0),
+                margin: EdgeInsets.fromLTRB(5, 0, 5, 0),
                 child: TimeDragTarget(Time: 6.toString()),
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(8, 5, 15, 25),
+                margin: EdgeInsets.fromLTRB(8, 0, 15, 25),
                 child: TimeDragTarget(Time: 5.toString()),
               ),
             ],
@@ -266,10 +266,10 @@ class ScorePage extends StatelessWidget {
                         padding: const EdgeInsets.all(20.0),
                         child: Center(
                           child:
-                              Text("🎉 Your Score : " + clock_score.toString(),
-                                  style: GoogleFonts.signika(
-                                    fontSize: 30,
-                                  )),
+                          Text("🎉 Your Score : " + clock_score.toString(),
+                              style: GoogleFonts.signika(
+                                fontSize: 30,
+                              )),
                         ),
                       ))
                 ],
@@ -285,61 +285,61 @@ class _ClockGameState extends State<ClockGame> {
   Widget build(BuildContext context) {
     return ScopedModelDescendant<MainModel>(
         builder: (BuildContext context, Widget child, MainModel model) {
-      return Scaffold(
-        backgroundColor: primaryTeal,
-        appBar: AppBar(
-          backgroundColor: primaryTeal,
-          elevation: 0.0,
-          leading: IconButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            icon: Icon(Icons.arrow_back_ios),
-            color: white,
-          ),
-        ),
-        body: Container(
-          padding: EdgeInsets.only(bottom: 30.0),
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage("assets/images/ClockBG.png"),
-                  fit: BoxFit.cover)),
-          child: Padding(
-            padding: const EdgeInsets.only(
-                bottom: 30.0, left: 10.0, right: 10.0, top: 30.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  'Place the numbers in the clock at thier correct positions',
-                  style: GoogleFonts.acme(
-                    fontSize: 40.0,
-                    color: white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Clock(),
-                SizedBox(
-                  height: 30.0,
-                ),
-                Expanded(
-                  flex: 4,
-                  child: Time_grid(),
-                ),
-              ],
+          return Scaffold(
+            backgroundColor: primaryTeal,
+            appBar: AppBar(
+              backgroundColor: primaryTeal,
+              elevation: 0.0,
+              leading: IconButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                icon: Icon(Icons.arrow_back_ios),
+                color: white,
+              ),
             ),
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: white,
-          child: Icon(Icons.arrow_forward_ios, color: primaryTeal),
-          onPressed: () {
-            setState(() => model.addScore(clock_score));
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => ValidLetterCheck1()));
-          },
-        ),
-      );
-    });
+            body: Container(
+              padding: EdgeInsets.only(bottom: 30.0),
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/ClockBG.png"),
+                      fit: BoxFit.cover)),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    bottom: 30.0, left: 10.0, right: 10.0, top: 30.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Place the numbers in the clock at thier correct positions',
+                      style: GoogleFonts.acme(
+                        fontSize: 40.0,
+                        color: white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Clock(),
+                    SizedBox(
+                      height: 30.0,
+                    ),
+                    Expanded(
+                      flex: 4,
+                      child: Time_grid(),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            floatingActionButton: FloatingActionButton(
+              backgroundColor: white,
+              child: Icon(Icons.arrow_forward_ios, color: primaryTeal),
+              onPressed: () {
+                setState(() => model.addScore(clock_score));
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => ValidLetterCheck1()));
+              },
+            ),
+          );
+        });
   }
 }

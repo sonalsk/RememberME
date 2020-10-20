@@ -53,7 +53,7 @@ class _GoodSpiritCheckState extends State<GoodSpiritCheck> {
                       topLeft: Radius.circular(75),
                       topRight: Radius.circular(75))),
               child: Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
